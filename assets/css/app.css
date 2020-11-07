@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+* {
+  margin: 0;
+  font-family: 'Fredericka the Great', cursive; }
+
+.shadow-inset, .base-grid .container .game-zone, .base-grid .container .up-section .wrapper {
+  box-shadow: inset 0 0 5px #5a5a5a;
+  border-radius: 15px; }
+
+.shadow, .base-grid .container .game-details .wrapper {
+  box-shadow: 0 0 5px #5a5a5a;
+  border-radius: 15px; }
+
+.title-of-section, .base-grid .container .game-details .wrapper__score .title, .base-grid .container .game-details .wrapper__level .title {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc; }
+
+.box {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; }
+  .box .detail {
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: 2px solid #ccc; }
+
+.base-grid {
+  background-color: lightred;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  background-color: #e8e8e8; }
+  .base-grid .container {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 30% 1fr 30%;
+    grid-template-rows: 20% 1fr 20%; }
+    .base-grid .container .game-zone {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 1rem; }
+    .base-grid .container .up-section {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative; }
+      .base-grid .container .up-section .wrapper {
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .base-grid .container .up-section .wrapper .title {
+          color: #616161; }
+          .base-grid .container .up-section .wrapper .title:hover {
+            cursor: default; }
+    .base-grid .container .game-details {
+      grid-column: 3/4;
+      grid-row: 2/3;
+      display: flex;
+      justify-content: center; }
+      .base-grid .container .game-details .wrapper {
+        width: calc(80% - 2rem);
+        padding: 1rem;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); }
+        .base-grid .container .game-details .wrapper__score {
+          grid-row: 1/2; }
+        .base-grid .container .game-details .wrapper__level {
+          grid-row: 2/3; }
+    .base-grid .container .wrapper-start {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      padding: 2rem 0; }
+      .base-grid .container .wrapper-start button {
+        width: 100%;
+        border: none;
+        background-color: rgba(40, 69, 75, 0.8);
+        color: #fff;
+        padding: 1rem 0;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: background-color .2s; }
+        .base-grid .container .wrapper-start button:hover {
+          cursor: pointer;
+          background-color: #28454b; }
+        .base-grid .container .wrapper-start button[disabled] {
+          cursor: not-allowed;
+          background-color: #ccc; }
+
+.game-zone .card {
+  box-shadow: 0 2px 2px #a7a5a5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  transform: scale(0.9);
+  transition: box-shadow .2s, transform .1s, background-color .2s; }
+  .game-zone .card-manate {
+    background-color: #85c7de; }
+  .game-zone .card-pink {
+    background-color: #e7cfcd; }
+  .game-zone .card-opal {
+    background-color: #09bc8a; }
+  .game-zone .card-thistle {
+    background-color: #508991; }
+  .game-zone .card:hover {
+    box-shadow: 0 8px 8px #a7a5a5;
+    cursor: pointer;
+    transform: scale(1);
+    background-color: rgba(0, 0, 0, 0.3); }
+
+.illuminate-card {
+  filter: brightness(150%); }
+
+.block {
+  cursor: not-allowed !important; }
+
+/*# sourceMappingURL=app.css.map */

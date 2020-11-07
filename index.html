@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Say!</title>
+    <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+<body>
+    <section class="base-grid">
+        <div class="container">
+            <!-- Title  -->
+            <div class="up-section">
+                <div class="wrapper">
+                    <h1 class="title">Charlie Say!</h1>
+                </div>
+            </div>
+
+            <!-- Game wrapper -->
+            <div class="game-zone">
+                <div class="card card-manate" data-color="manate" id="btnManate"></div>
+                <div class="card card-pink" data-color="pink" id="btnPink"></div>
+                <div class="card card-opal" data-color="opal" id="btnOpal"></div>
+                <div class="card card-thistle" data-color="thistle" id="btnThistle"></div>
+            </div>
+
+            <!-- Details -->
+            <div class="game-details">
+                <div class="wrapper">
+                    <!-- Score -->
+                    <div class="wrapper__score">
+                        <h3 class="title">SCORE</h3>
+                        <div class="score box">
+                            <div class="detail">
+                                <span id="score">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- level  -->
+                    <div class="wrapper__level">
+                        <h3 class="title">LEVEL</h3>
+                        <div class="level box">
+                            <div class="detail">
+                                <span id="level">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start button  -->
+            <div class="wrapper-start">
+                <button type="button" id="btn-start">Start game!</button>
+            </div>
+        </div>
+    </section>
+</body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./assets/js/game.js"></script>
+</html>

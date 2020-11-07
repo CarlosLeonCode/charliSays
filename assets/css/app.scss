@@ -1,0 +1,212 @@
+// * Font 
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+// * General 
+* {
+    margin: 0;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.shadow-inset{
+    box-shadow: inset 0 0 5px rgb(90, 90, 90);
+    border-radius: 15px;
+}
+
+.shadow{
+    box-shadow: 0 0 5px rgb(90, 90, 90);
+    border-radius: 15px;
+}
+
+.title-of-section{
+    text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+@mixin shadow($values) {
+    box-shadow: $values rgb(167, 165, 165);
+}
+
+// Wrapper of details 
+.box{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+
+    .detail{
+        width: 50%;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 35px;
+        border: 2px solid #ccc;
+    }
+}
+
+// * Grid and  main layout 
+.base-grid{
+    background-color: lightred;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    background-color: rgb(232, 232, 232);
+
+    .container{
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: 30% 1fr 30%;
+        grid-template-rows: 20% 1fr 20%;
+
+        // * Game zone 
+        .game-zone{
+            @extend .shadow-inset;
+            // --
+            grid-column: 2/3;
+            grid-row: 2/3;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 1rem;
+        }
+
+        // * Title
+        .up-section{
+            grid-column: 2/3;
+            grid-row: 1/2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .wrapper{
+                @extend .shadow-inset;
+                // -- 
+                width: 100%;
+                height: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+
+                .title{
+                    color: #616161;
+
+                    &:hover{
+                        cursor: default;
+                    }
+                }
+            }
+
+        }
+
+        // * Game details 
+        .game-details{
+            grid-column: 3/4;
+            grid-row: 2/3;
+            display: flex;
+            justify-content: center;
+
+            .wrapper{
+                @extend .shadow; 
+                // --
+                width: calc(80% - 2rem);
+                padding: 1rem;
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+
+                &__score{
+                    grid-row: 1/2;
+                    // -- 
+                    .title{
+                        @extend .title-of-section;
+                    }
+                }
+
+                &__level{
+                    grid-row: 2/3;
+                    // --
+                    .title{
+                        @extend .title-of-section;
+                    }
+                }
+            }
+        }
+
+        // * start button
+        .wrapper-start{
+            grid-column: 2/3;
+            grid-row: 3/4;
+            padding: 2rem 0;
+
+            button{
+                width: 100%;
+                border: none;
+                background-color: rgba(40, 69, 75, 0.8);
+                color: #fff;
+                padding: 1rem 0;
+                border-radius: 10px;
+                font-weight: bold;
+                transition: background-color .2s;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(40, 69, 75);
+                }
+
+                &[disabled]{
+                    cursor: not-allowed;
+                    background-color: #ccc;
+                }
+            }
+        } 
+    }
+}
+
+
+// * Cards 
+.game-zone{
+
+    .card{
+        @include shadow(0 2px 2px);
+        // --
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        transform: scale(0.9);
+        transition: box-shadow .2s,
+                    transform .1s,
+                    background-color .2s;
+        // Cards colors 
+        &-manate { background-color: #85c7de; }
+        &-pink { background-color: #e7cfcd; }
+        &-opal { background-color: #09bc8a; }
+        &-thistle { background-color: #508991; }
+
+        // * Card hover
+        &:hover{
+            @include shadow(0 8px 8px);
+            cursor: pointer;
+            transform: scale(1);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+
+// * Classes for the game 
+.illuminate-card{
+    filter: brightness(150%);
+}
+
+.block{
+    cursor: not-allowed !important; 
+}
