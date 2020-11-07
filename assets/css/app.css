@@ -16,6 +16,9 @@
   padding: 1rem 0;
   border-bottom: 1px solid #ccc; }
 
+.titles-color, .base-grid .container .up-section .wrapper .title, .base-grid .container .game-details .wrapper__score .title, .base-grid .container .game-details .wrapper__level .title {
+  color: #616161; }
+
 .box {
   margin-top: 2rem;
   display: flex;
@@ -78,10 +81,8 @@
         display: flex;
         justify-content: center;
         align-items: center; }
-        .base-grid .container .up-section .wrapper .title {
-          color: #616161; }
-          .base-grid .container .up-section .wrapper .title:hover {
-            cursor: default; }
+        .base-grid .container .up-section .wrapper .title:hover {
+          cursor: default; }
     .base-grid .container .game-details {
       grid-column: 3/4;
       grid-row: 2/3;
@@ -107,9 +108,9 @@
         color: #fff;
         padding: 1rem 0;
         border-radius: 10px;
-        font-weight: bold;
         transition: background-color .2s;
-        outline: none; }
+        outline: none;
+        font-size: 1.2rem; }
         .base-grid .container .wrapper-start button:hover {
           cursor: pointer;
           background-color: #28454b; }
