@@ -1,19 +1,23 @@
 // * Font 
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 // * General 
+$clr-blue-light: #DEDBD2;
+$clr-green-light: #B0C4B1;
+$clr-marine-dark: #4A5759;
+
 * {
     margin: 0;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Dosis', sans-serif;
 }
 
 .shadow-inset{
-    box-shadow: inset 0 0 5px rgb(90, 90, 90);
     border-radius: 15px;
+    box-shadow: inset 0 0 2px rgb(90, 90, 90);
 }
 
 .shadow{
-    box-shadow: 0 0 5px rgb(90, 90, 90);
+    box-shadow: 0 0 2px rgb(90, 90, 90);
     border-radius: 15px;
 }
 
@@ -55,9 +59,9 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    display: grid;
+    display: none;
     grid-template-columns: 30px 1fr 30px;
-    background-color: rgb(232, 232, 232);
+    background-color: $clr-blue-light;
 
     .container{
         grid-column: 2/3;
@@ -84,7 +88,8 @@
                 width: 100%;
                 height: 100%;
                 content: "";
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: $clr-marine-dark;
+                opacity: .8;
                 border-radius: inherit;
                 transform: translateX(-100%);
                 transition: transform .2s;
@@ -106,7 +111,6 @@
             position: relative;
 
             .wrapper{
-                @extend .shadow-inset;
                 // -- 
                 width: 100%;
                 height: 4rem;
@@ -197,16 +201,19 @@
     .card{
         @include shadow(0 2px 2px);
         // --
-        width: 100%;
-        height: 100%;
+        width: 6rem;
+        height: 6rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 25px;
+        border-radius: 50%;
         transform: scale(0.9);
         transition: box-shadow .2s,
                     transform .1s,
                     background-color .2s;
+
+        justify-self: center;
+        align-self: center;
         // Cards colors 
         &-manate { background-color: #85c7de; }
         &-pink { background-color: #e7cfcd; }
@@ -231,4 +238,30 @@
 
 .block{
     cursor: not-allowed !important; 
+}
+
+// Medias 
+@media only screen and (min-width: 768px) {
+    .base-grid{
+        display: grid;
+    }
+
+    .media-not-allowed{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .media-not-allowed{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: $clr-blue-light;
+
+        .under_construction-img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
 }

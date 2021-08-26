@@ -1,36 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 * {
   margin: 0;
-  font-family: 'Fredericka the Great', cursive; }
+  font-family: "Dosis", sans-serif;
+}
 
-.shadow-inset, .base-grid .container .game-zone, .base-grid .container .up-section .wrapper {
-  box-shadow: inset 0 0 5px #5a5a5a;
-  border-radius: 15px; }
+.shadow-inset, .base-grid .container .game-zone {
+  border-radius: 15px;
+  box-shadow: inset 0 0 2px #5a5a5a;
+}
 
 .shadow, .base-grid .container .game-details .wrapper {
-  box-shadow: 0 0 5px #5a5a5a;
-  border-radius: 15px; }
+  box-shadow: 0 0 2px #5a5a5a;
+  border-radius: 15px;
+}
 
-.title-of-section, .base-grid .container .game-details .wrapper__score .title, .base-grid .container .game-details .wrapper__level .title {
+.title-of-section, .base-grid .container .game-details .wrapper__level .title, .base-grid .container .game-details .wrapper__score .title {
   text-align: center;
   padding: 1rem 0;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+}
 
-.titles-color, .base-grid .container .up-section .wrapper .title, .base-grid .container .game-details .wrapper__score .title, .base-grid .container .game-details .wrapper__level .title {
-  color: #616161; }
+.titles-color, .base-grid .container .game-details .wrapper__level .title, .base-grid .container .game-details .wrapper__score .title, .base-grid .container .up-section .wrapper .title {
+  color: #616161;
+}
 
 .box {
   margin-top: 2rem;
   display: flex;
-  justify-content: center; }
-  .box .detail {
-    width: 50%;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 35px;
-    border: 2px solid #ccc; }
+  justify-content: center;
+}
+.box .detail {
+  width: 50%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  border: 2px solid #ccc;
+}
 
 .base-grid {
   background-color: lightred;
@@ -38,114 +45,164 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: grid;
+  display: none;
   grid-template-columns: 30px 1fr 30px;
-  background-color: #e8e8e8; }
-  .base-grid .container {
-    grid-column: 2/3;
-    display: grid;
-    grid-template-columns: 30% 1fr 30%;
-    grid-template-rows: 20% 1fr 20%; }
-    .base-grid .container .game-zone {
-      position: relative;
-      grid-column: 2/3;
-      grid-row: 2/3;
-      padding: 1rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-gap: 1rem;
-      overflow: hidden; }
-      .base-grid .container .game-zone:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: inherit;
-        transform: translateX(-100%);
-        transition: transform .2s; }
-      .base-grid .container .game-zone.block:after {
-        transform: translateX(0); }
-    .base-grid .container .up-section {
-      grid-column: 2/3;
-      grid-row: 1/2;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      position: relative; }
-      .base-grid .container .up-section .wrapper {
-        width: 100%;
-        height: 4rem;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        .base-grid .container .up-section .wrapper .title:hover {
-          cursor: default; }
-    .base-grid .container .game-details {
-      grid-column: 3/4;
-      grid-row: 2/3;
-      display: flex;
-      justify-content: center; }
-      .base-grid .container .game-details .wrapper {
-        width: calc(80% - 2rem);
-        padding: 1rem;
-        display: grid;
-        grid-template-rows: repeat(2, 1fr); }
-        .base-grid .container .game-details .wrapper__score {
-          grid-row: 1/2; }
-        .base-grid .container .game-details .wrapper__level {
-          grid-row: 2/3; }
-    .base-grid .container .wrapper-start {
-      grid-column: 2/3;
-      grid-row: 3/4;
-      padding: 2rem 0; }
-      .base-grid .container .wrapper-start button {
-        width: 100%;
-        border: none;
-        background-color: rgba(40, 69, 75, 0.8);
-        color: #fff;
-        padding: 1rem 0;
-        border-radius: 10px;
-        transition: background-color .2s;
-        outline: none;
-        font-size: 1.2rem; }
-        .base-grid .container .wrapper-start button:hover {
-          cursor: pointer;
-          background-color: #28454b; }
-        .base-grid .container .wrapper-start button[disabled] {
-          cursor: not-allowed;
-          background-color: #ccc; }
-
-.game-zone .card {
-  box-shadow: 0 2px 2px #a7a5a5;
+  background-color: #DEDBD2;
+}
+.base-grid .container {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 30% 1fr 30%;
+  grid-template-rows: 20% 1fr 20%;
+}
+.base-grid .container .game-zone {
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 1rem;
+  overflow: hidden;
+}
+.base-grid .container .game-zone:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #4A5759;
+  opacity: 0.8;
+  border-radius: inherit;
+  transform: translateX(-100%);
+  transition: transform 0.2s;
+}
+.base-grid .container .game-zone.block:after {
+  transform: translateX(0);
+}
+.base-grid .container .up-section {
+  grid-column: 2/3;
+  grid-row: 1/2;
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
+  position: relative;
+}
+.base-grid .container .up-section .wrapper {
+  width: 100%;
+  height: 4rem;
+  display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 25px;
+}
+.base-grid .container .up-section .wrapper .title:hover {
+  cursor: default;
+}
+.base-grid .container .game-details {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+}
+.base-grid .container .game-details .wrapper {
+  width: calc(80% - 2rem);
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+.base-grid .container .game-details .wrapper__score {
+  grid-row: 1/2;
+}
+.base-grid .container .game-details .wrapper__level {
+  grid-row: 2/3;
+}
+.base-grid .container .wrapper-start {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  padding: 2rem 0;
+}
+.base-grid .container .wrapper-start button {
+  width: 100%;
+  border: none;
+  background-color: rgba(40, 69, 75, 0.8);
+  color: #fff;
+  padding: 1rem 0;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+  outline: none;
+  font-size: 1.2rem;
+}
+.base-grid .container .wrapper-start button:hover {
+  cursor: pointer;
+  background-color: #28454b;
+}
+.base-grid .container .wrapper-start button[disabled] {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.game-zone .card {
+  box-shadow: 0 2px 2px #a7a5a5;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   transform: scale(0.9);
-  transition: box-shadow .2s, transform .1s, background-color .2s; }
-  .game-zone .card-manate {
-    background-color: #85c7de; }
-  .game-zone .card-pink {
-    background-color: #e7cfcd; }
-  .game-zone .card-opal {
-    background-color: #09bc8a; }
-  .game-zone .card-thistle {
-    background-color: #508991; }
-  .game-zone .card:hover {
-    box-shadow: 0 8px 8px #a7a5a5;
-    cursor: pointer;
-    transform: scale(1);
-    background-color: rgba(0, 0, 0, 0.3); }
+  transition: box-shadow 0.2s, transform 0.1s, background-color 0.2s;
+  justify-self: center;
+  align-self: center;
+}
+.game-zone .card-manate {
+  background-color: #85c7de;
+}
+.game-zone .card-pink {
+  background-color: #e7cfcd;
+}
+.game-zone .card-opal {
+  background-color: #09bc8a;
+}
+.game-zone .card-thistle {
+  background-color: #508991;
+}
+.game-zone .card:hover {
+  box-shadow: 0 8px 8px #a7a5a5;
+  cursor: pointer;
+  transform: scale(1);
+  background-color: rgba(0, 0, 0, 0.3);
+}
 
 .illuminate-card {
-  filter: brightness(150%); }
+  filter: brightness(150%);
+}
 
 .block {
-  cursor: not-allowed !important; }
+  cursor: not-allowed !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .base-grid {
+    display: grid;
+  }
+
+  .media-not-allowed {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .media-not-allowed {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #DEDBD2;
+  }
+  .media-not-allowed .under_construction-img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
